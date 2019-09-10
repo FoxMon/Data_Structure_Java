@@ -2,8 +2,8 @@ public class Node<E> {
 	private E item;
 	private Node<E> next;
 	
-	public Node(E newItem, Node<E> node) { // 생성자
-		item = newItem; // 새로운 아이템 저장
+	public Node(E item, Node<E> node) { // 생성자
+		this.item = item; // 새로운 아이템 저장
 		next = node; // 레퍼런스를 저장
 	}
 	
