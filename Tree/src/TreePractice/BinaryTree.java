@@ -2,7 +2,7 @@ package TreePractice;
 
 import java.util.*;
 
-public class BinaryTree<Key extends Comparable<Key>> { // Constructor
+public class BinaryTree<Key extends Comparable<Key>> {
 	private Node root;
 	
 	public BinaryTree() { root = null; }
@@ -10,46 +10,46 @@ public class BinaryTree<Key extends Comparable<Key>> { // Constructor
 	public Node getRoot() { return root; }
 	public void setRoot(Node root) { this.root = root; }
 	
-	public boolean isEmpty() { return (root == null); }
+	public boolean isEmpty() { return ( root == null ); }
 	
-	public void preorder(Node n) { // 전위순회 ( 나 -> 왼쪽 -> 오른쪽 )
+	public void preorder(Node n) {
 		if(n != null) {
-			System.out.print(n.getKey() + " "); // 나
+			System.out.print(n.getKey() + " ");
 			
-			preorder(n.getLeft()); // 왼쪽방문
-			preorder(n.getRight()); // 오른쪽방문
+			preorder(n.getLeft());
+			preorder(n.getRight());
 		}
 	}
 	
-	public void inorder(Node n) { // 중위순회 ( 왼쪽 -> 나 -> 오른쪽 )
+	public void inorder(Node n) {
 		if(n != null) {
-			inorder(n.getLeft()); // 왼쪽방문
+			inorder(n.getLeft());
 			
-			System.out.print(n.getKey() + " "); // 나
+			System.out.print(n.getKey() + " ");
 			
-			inorder(n.getRight()); // 오른쪽방문
+			inorder(n.getRight());
 		}
 	}
 	
-	public void postorder(Node n) { // 후위순회 ( 왼쪽 -> 오른쪽 -> 나 )
+	public void postorder(Node n) {
 		if(n != null) {
-			postorder(n.getLeft()); // 왼쪽방문
-			postorder(n.getRight()); // 오른쪽방문
+			postorder(n.getLeft());
+			postorder(n.getRight());
 			
-			System.out.print(n.getKey() + " "); // 나
+			System.out.print(n.getKey() + " ");
 		}
 	}
 	
-	public void levelorder(Node root) { // 레벨순회 ( 위에서부터 방문 )
-		Queue<Node> q = new LinkedList<Node>(); // 큐 자료구조 이용
+	public void levelorder(Node root) {
+		Queue<Node> q = new LinkedList<Node>();
 		Node temp;
 		
-		q.add(root); // 루트노드 큐에 삽입
+		q.add(root);
 		
 		while(!q.isEmpty()) {
-			temp = q.remove(); // 가장 앞 노드 뺌
+			temp = q.remove();
 			
-			System.out.print(temp.getKey() + " "); // 제거된 거 출력 ( 나 )
+			System.out.print(temp.getKey() + " ");
 			
 			if(temp.getLeft() != null) {
 				q.add(temp.getLeft());
@@ -61,31 +61,31 @@ public class BinaryTree<Key extends Comparable<Key>> { // Constructor
 		}
 	}
 	
-	public int size(Node n) { // n을 루트로 하는 (서브)트리에 있는 노드 수
+	public int size(Node n) {
 		if(n == null) {
-			return 0; // null이면 0
+			return 0;
 		} else {
-			return (1 + size(n.getLeft()) + size(n.getRight()));
+			return ( 1 + size(n.getLeft()) + size(n.getRight()));
 		}
 	}
 	
-	public int height(Node n) { // n을 루트로하는 (서브)트리의 높이
+	public int height(Node n) {
 		if(n == null) {
-			return 0; // null이면 0
+			return 0;
 		} else {
-			return (1 + Math.max(height(n.getLeft()), height(n.getRight())));
+			return ( 1 + Math.max(height(n.getLeft()), height(n.getRight())) );
 		}
 	}
 	
-	public static boolean isEqual(Node n, Node m) { // 두 트리의 동일성 검사
-		if(n == null || m == null) { // 둘 중 하나라도 null
-			return ( n == m ); // 둘다 null true, 아니면 false
+	public static boolean isEqual(Node n, Node m) {
+		if(n == null || m == null) {
+			return ( n == m );
 		}
 		
-		if(n.getKey().compareTo(m.getKey()) != 0) { // 둘 다 null이 아니면 item 비교
+		if(n.getKey().compareTo(m.getKey()) != 0) {
 			return false;
 		}
 		
-		return( isEqual(n.getLeft(), m.getLeft()) && isEqual(n.getRight(), m.getRight()) ); // item같으면 왼쪽 / 오른쪽 자식으로 재귀호출
+		return ( isEqual(n.getLeft(), m.getLeft()) && isEqual(n.getRight(), m.getRight()) );
 	}
-}
+} 

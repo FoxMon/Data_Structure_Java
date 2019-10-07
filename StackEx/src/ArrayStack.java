@@ -51,7 +51,7 @@ public class ArrayStack<E> {
 		E item = s[top]; // 새로운 아이템 반환할 변수에 임시 저장
 		s[top--] = null; // null넣고 top인덱스 줄임
 		
-		if(size() > 0 && size() == s.length % 4) { // 배열이 빈공간이 많다면
+		if(size() > 0 && size() == s.length / 4) { // 배열이 빈공간이 많다면
 			resize(s.length / 2);
 		}
 		

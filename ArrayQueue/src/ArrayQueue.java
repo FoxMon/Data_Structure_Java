@@ -29,8 +29,8 @@ public class ArrayQueue<E> {
 	public void resize(int newSize) { // 사이즈 재조정
 		Object []t = new Object[newSize];
 		
-		for(int i = 0; i < size; i++) {
-			t[i] = q[i]; // 복사
+		for(int i = 1, j = front + 1; i < size + 1; i++, j++) {
+			t[i] = q[j]; // 복사
 		}
 		
 		front = 0; // remove가 진행되면서 front의 위치가 바뀌었을 가능성이 있으니까, front를 다시 0에다 설정함
