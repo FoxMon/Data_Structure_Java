@@ -1,18 +1,16 @@
 package PriorityQueue;
 
-public class Entry<Key extends Comparable<Key>, Value> { // 우선순위큐를 구현하기 위한 Entry
-	private Key key;
-	private Value value;
+public class Entry<Key extends Comparable<Key>, Value> {
+	private Key ky;
+	private Value val;
 	
-	public Entry(Key key, Value value) { // Entry의 생성자
-		this.key = key;
-		this.value = value;
+	public Entry(Key newKey, Value newValue) {
+		ky = newKey;
+		val = newValue;
 	}
 	
-	// get과 set 메소드
-	
-	public Key getKey() { return key; }
-	public Value getValue() { return value; }
-	public void setKey(Key key) { this.key = key; }
-	public void setValue(Value value) { this.value = value; }
+	public Key getKey() { return ky; }
+	public Value getValue() { return val; }
+	public void setKey(Key newKey) { this.ky = newKey; }
+	public void setValue(Value newValue) { this.val = newValue; }
 }
