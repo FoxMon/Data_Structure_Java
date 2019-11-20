@@ -1,7 +1,7 @@
 package Huffman;
 
 public class Entry {
-	private int frequency; // ºóµµ ¼ö
+	private int frequency;
 	private String word;
 	private Entry left;
 	private Entry right;
@@ -20,5 +20,5 @@ public class Entry {
 	public String getCode() { return code; }
 	public Entry getLeft() { return left; }
 	public Entry getRight() { return right; }
-	public void setCode(String code ) { this.code = code; }
-} 
+	public void setCode(String code) { this.code = code; }
+}
