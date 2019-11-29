@@ -80,7 +80,7 @@ public class Tree<Key extends Comparable<Key>, Value> {
 		
 		n.setHeight(tallerHeight(height(n.getLeft()), height(n.getRight())) + 1);
 		
-		return balance(n);
+		return balance(n); 	
 	}
 	
 	public static void main(String[] args) {
