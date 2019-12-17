@@ -4,14 +4,15 @@ import java.lang.Comparable;
 
 public class Merge {
 	private static void merge(Comparable[] a, Comparable[] b, int low, int mid, int high) {
-		int i = low, j = mid + 1;
+		int i = low;
+		int j = mid + 1;
 		
 		for(int k = low; k <= high; k++) {
 			if(i > mid) {
 				b[k] = a[j++];
 			} else if(j > high) {
 				b[k] = a[i++];
-			} else if (isless(a[j], a[i])) {
+			} else if(isless(a[j], a[i])) {
 				b[k] = a[j++];
 			} else {
 				b[k] = a[i++];

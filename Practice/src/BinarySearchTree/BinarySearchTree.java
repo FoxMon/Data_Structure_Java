@@ -94,27 +94,27 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 			return null;
 		}
 		
-		int temp = n.getKey().compareTo(k);
+		int t = n.getKey().compareTo(k);
 		
-		if(temp > 0) { // Move to left subtree
+		if(t > 0) {
 			n.setLeft(delete(n.getLeft(), k));
-		} else if(temp < 0) { // Move to right subtree
+		} else if (t < 0) {
 			n.setRight(delete(n.getRight(), k));
-		} else { // Target
-			if(n.getRight() == null) { // Case 0, 1
+		} else {
+			if(n.getRight() == null) { // case 0, 1
 				return n.getLeft();
 			}
 			
-			if(n.getLeft() == null) { // Case 1
+			if(n.getLeft() == null) { // case 1
 				return n.getRight();
 			}
 			
-			Node target = n; // Case 2
-			n= min(target.getRight());
+			Node target = n; // case 2
+			n = min(target.getRight());
 			n.setRight(deleteMin(target.getRight()));
 			n.setLeft(target.getLeft());
 		}
 		
-		return n;	
+		return n;
 	}
 }

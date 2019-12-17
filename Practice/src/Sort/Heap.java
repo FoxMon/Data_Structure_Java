@@ -20,15 +20,15 @@ public class Heap {
 		while(2*p <= heapSize) {
 			int s = 2*p;
 			
-			if(s < heapSize && isless(a[s], a[s+1])) {
+			if(s < heapSize && isless(a[s], a[s+1])) { // 승자로 만들기
 				s++;
 			}
 			
-			if(!isless(a[p], a[s])) {
+			if(!isless(a[p], a[s])) { // 힙 속성 만족하는 경우
 				break;
 			}
 			
-			swap(a, p, s);
+			swap(a, p, s); // 교환
 			p = s;
 		}
 	}

@@ -22,8 +22,8 @@ public class BHeap<Key extends Comparable<Key>, Value> {
 	}
 	
 	public void downheap(int i) {
-		while(2*i <= n) {
-			int k = 2*i;
+		while(i*2 <= n) {
+			int k = i*2;
 			
 			if(k < n && greater(k, k+1)) {
 				k++;

@@ -7,10 +7,10 @@ public class Shell {
 		int N = a.length;
 		int h = 4;
 		
-		while(h>=1) {
+		while(h >= 1) {
 			for(int i = h; i < N; i++) {
 				for(int j = i; j >= h && isless(a[j], a[j-h]); j -= h) {
-					swap(a, j, j - h);
+					swap(a, j, j-h);
 				}
 			}
 			
